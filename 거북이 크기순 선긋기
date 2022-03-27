@@ -9,7 +9,7 @@ if __name__ == "__main__":
     turtle.title('거북이 리스트활용 정렬')
     turtle.setup(width=swidth + 50, height=sheight + 50)
     turtle.screensize(swidth, sheight)
-
+##2019038050_윤승재##
     for i in range(0, 5):
         myTurtle = turtle.Turtle('turtle')
         tX = random.randrange(-swidth / 2, swidth / 2)
