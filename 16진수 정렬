@@ -9,7 +9,7 @@ if __name__ == "__main__" :
     for i in range(0, 10) :
         tmp = hex(random.randrange(0, 100000))
         data.append(tmp)
-
+##2019038050_윤승재##
     print('정렬 전 데이터 : ', end='')
     [print(num, end='  ') for num in data]
 
