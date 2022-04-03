@@ -1,0 +1,31 @@
+def base2(num) :
+    if num == 0 :
+        return
+    else :
+        base2(num//2)
+        print(num%2,end='')
+
+def base8(num) :
+    if num == 0 :
+        return
+    else :
+        base8(num//8)
+        print(num%8,end='')
+
+def base16(num) :
+    if num == 0 :
+        return
+    else :
+        base16(num//16)
+        print(num%16,end='')
+
+#메인함수
+if __name__ == "__main__" :
+    num = input('10진수 입력 --> ')
+#2019038050_윤승재
+    print('2진수 : ')
+    base2(int(num))
+    print('\n8진수 : ')
+    base8(int(num))
+    print('\n16진수 : ')
+    base16(int(num))
