@@ -1,0 +1,25 @@
+##전역변수##
+inStr, outStr = "", ""  #입력받을 문자열, 변환 후 출력할 문자열
+ch = "" #한글자씩 추출
+count, i = 0, 0
+
+##메인코드##
+if __name__ == "__main__" :
+    inStr = input("문자열 입력 : ")
+    count = len(inStr)    #문자열 길이 count
+#2019038050_윤승재
+    for i in range(0,count) :
+        ch=inStr[i]
+
+        if (ord(ch) >= ord("A") and ord(ch) <= ord("Z")) :   #문자가 대문자 A~Z면
+            newCh = ch.lower() #소문자로 변환
+
+        elif (ord(ch) >= ord("a") and ord(ch) <= ord("z")) :   #문자가 소문자 A~Z면
+            newCh = ch.upper() #대문자로 변환
+
+        else :
+            newCh = ch
+
+        outStr += newCh #출력 문자열에 변환값 저장
+
+print("대소문자 변환결과 : -> %s" %outStr)
