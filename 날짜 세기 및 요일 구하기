@@ -1,0 +1,19 @@
+from time import *
+from datetime import *
+
+
+def getday(t) :
+    weeks = ['월','화','수','목','금','토','일']
+    return weeks[t.tm_wday]
+
+#메인코드
+if __name__ == "__main__" :
+#2019038050_윤승재
+    year,mon,day = input('시작날짜(연 월 일) -->').split()
+    tm = localtime()        #지역시간
+    time1 = datetime(int(year),int(mon),int(day))
+    time2 = datetime.now()
+
+    print(time1, '부터 오늘(', time2, ')까지는 ', (time2 - time1).days , '일이 지났습니다.')
+    print('그리고 오늘은 ',getday(tm),'요일입니다.')
+
