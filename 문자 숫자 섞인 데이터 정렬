@@ -1,0 +1,35 @@
+import random
+
+#문자열 넘겨받은 후 숫자만 추출해서 결과로 반환하는 함수 선언
+def getNumber(strData) :
+    numstr = ''
+    for ch in strData :
+        if ch.isdigit() :   #문자 하나씩 추출 후 숫자인지 확인
+            numstr += ch    #숫자만 추출
+
+    return int(numstr)  #숫자로 변환해 반환
+
+#전역변수
+data = []
+i,k = 0, 0
+#2019038050_윤승재
+
+#메인코드
+if __name__ == "__main__" :
+    for i in range(0,10) :
+        tmp = hex(random.randrange(0,100000)) #랜덤데이터 10개 생성
+        tmp = tmp[2:]   #0x 제거
+        data.append(tmp)    #data에 tmp 추가
+
+    print('정렬 전 데이터 : ', end = '')
+    [print(num, end = ' ') for num in data]
+
+    for i in range(0, len(data) -1) :
+        for k in range(i+1, len(data)) :
+            if getNumber(data[i]) > getNumber(data[k]) :        #data[i]가 더 크면 k랑 바꿈
+                tmp = data[i]
+                data[i]=data[k]
+                data[k]=tmp
+
+    print('\n정렬 후 데이터 : ', end = '')
+    [print(num, end=' ') for num in data]
